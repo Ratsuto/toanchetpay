@@ -4,21 +4,65 @@
 @custom-variant dark (&:where(.dark-mode, .dark-mode *));
 
 @font-face {
-  font-family: "UbuntuSans";
-  src: url("@/assets/fonts/UbuntuSans-Regular.ttf") format("truetype");
+    font-family: "UbuntuSans";
+    src: url("@/assets/fonts/UbuntuSans-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "GoogleSansCode";
-  src: url("@/assets/fonts/GoogleSansCode-Regular.ttf") format("truetype");
+    font-family: "GoogleSansCode";
+    src: url("@/assets/fonts/GoogleSansCode-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "PTSans";
-  src: url("@/assets/fonts/PTSans-Regular.ttf") format("truetype");
+    font-family: "PTSans";
+    src: url("@/assets/fonts/PTSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("@/assets/fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "NotoSansHK";
+    src: url("@/assets/fonts/NotoSansHK-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Krasar";
+    src: url("@/assets/fonts/Krasar Regular.ttf") format("truetype");
 }
 
 *, html, body {
-  font-family: "PTSans", "GoogleSansCode", "UbuntuSans", sans-serif, serif, courier;
-  font-style: normal;
+    font-family: "Roboto", "Krasar", "NotoSansHK", "GoogleSansCode", sans-serif, serif, courier;
+    font-style: normal;
+}
+
+::-webkit-scrollbar {
+    @apply w-[6px] bg-none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    @apply hidden;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-[#ccc] rounded-2xl cursor-grab;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-none;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px); /* Adjust this value to change the float height */
+    }
+}
+
+.floating-element {
+    animation: float 2.5s ease-in-out infinite;
 }
